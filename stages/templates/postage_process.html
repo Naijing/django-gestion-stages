@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Django-Entreprise</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+
+    <style>
+        body {
+
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body class="container">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://localhost:8000/admin/">Project admin</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://localhost:8000/entreprises/">Liste des entreprises</a></li>
+                <li><a href="http://localhost:8000/entreprises/getlocation/">Localisation des entreprises</a></li>
+                <li class="active"><a href="http://localhost:8000/entreprises/publipostage/">Publipostage </a></li>
+
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<h2 style="text-align: center">Entreprises n'ayant pas encore payé leurs taxes d'apprentissage</h2>
+</br>
+
+<table  class="table">
+<tr><th>Nom de l'entreprise</th><th>Adresse</th><th>Code postal</th><th>Ville</th><th>Pays</th><th>publipostage </th></tr>
+
+{% for e in entreprises %}
+<tr>
+<td>{{ e.nom }}</td>
+<td>{{ e.adresse }}</td>
+<td>{{ e.codePostal }}</td>
+<td>{{ e.ville }}</td>
+<td>{{ e.pays }}</td>
+
+<td><a href="http://localhost:8000/entreprises/publipostage/{{ e.pk }}/">Envoyer un mail au contact</a></td>
+
+</tr>
+
+{% endfor %}
+</table>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</body>
+</html>

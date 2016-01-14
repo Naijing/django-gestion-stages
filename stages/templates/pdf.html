@@ -1,0 +1,206 @@
+<body marginwidth="0" marginheight="0" bgcolor="#ebf4e8" topmargin="0"
+	  leftmargin="0">
+<table height="100%" width="100%" cellspacing="0" cellpadding="0" border="0"
+	   bgcolor="#ebf4e8">
+	<tr>
+		<td valign="top" align="middle">
+			<table width="550" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td bgcolor="#ffffff" align="left">
+						<table cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td>{% load staticfiles %}<img height="19" width="550"
+										 src="{% static "stages/static/image/i-01.gif" %}"
+										 alt=" "
+
+										></td>
+							</tr>
+							<tr>
+								<td style="BORDER-RIGHT: rgb(169,209,154) 1px solid; BORDER-LEFT: rgb(169,209,154) 1px solid"
+
+										>
+									<table width="100%" cellspacing="0"
+										   cellpadding="0" border="0">
+										<tr>
+											<td valign="top"
+												style="PADDING-RIGHT: 0pt; PADDING-LEFT: 20px; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt"
+
+													>{% load static %}<img height="30"
+														  width="156"
+														  src="{% static "image/logo.gif" %}"
+														  alt=" "
+														  style="MARGIN: 20px 0pt 0pt">
+											</td>
+											<td width="102">{% load staticfiles %}<img height="98"
+																 width="102"
+																 src="{% static "image/i-02.gif" %}"
+																 alt=" "
+
+													></td>
+											<td width="165" valign="top"></td>
+										</tr>
+									</table>
+									<table cellspacing="0" cellpadding="0"
+										   border="0">
+										<tr>
+											<td>{% load staticfiles %}<img height="14" width="548"
+													 src="{% static "stages/static/images/i-06.gif" %}"
+													 alt=" "
+
+													></td>
+										</tr>
+										<tr>
+											<td>
+												<table width="100%"
+													   cellspacing="0"
+													   cellpadding="0"
+													   border="0">
+													<tr>
+														<td bgcolor="#4ea12d"
+															style="PADDING-RIGHT: 0pt; PADDING-LEFT: 20px; FONT-SIZE: 18px; PADDING-BOTTOM: 0pt; COLOR: rgb(255,255,255); PADDING-TOP: 0pt; FONT-FAMILY: Arial,Helvetica,sans-serif; BACKGROUND-COLOR: rgb(78,161,45)"
+
+																>Centre des impôts
+														</td>
+														<td width="185">{% load staticfiles %}<img
+																height="24"
+																width="185"
+																src="{% static "stages/static/image/i-07.gif" %}"
+																alt=" "
+
+																></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td>{% load staticfiles %}<img height="24" width="548"
+													 src="{% static "stages/image/i-08.gif" %}"
+													 alt=" "
+
+													></td>
+										</tr>
+									</table>
+									<table cellspacing="0" cellpadding="0"
+										   border="0">
+										<tr>
+											<td style="PADDING-RIGHT: 0pt; PADDING-LEFT: 2px; PADDING-BOTTOM: 0pt; PADDING-TOP: 2px"
+
+													>
+												<table cellspacing="0"
+													   cellpadding="0"
+													   border="0">
+													<tr>
+
+														<td width="380"
+															height="50">
+															&nbsp;</td>
+														<td valign="top"
+															bgcolor="#f6f6f6"
+															style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 12px; PADDING-BOTTOM: 0pt; COLOR: rgb(51,51,51); LINE-HEIGHT: 17px; PADDING-TOP: 0pt; FONT-FAMILY: Arial,Helvetica,sans-serif; BACKGROUND-COLOR: rgb(246,246,246)"
+
+																><p
+																style="FONT-SIZE: 13px; MARGIN: 20px 0pt 8px; COLOR: rgb(51,51,51)"
+
+																>
+															<b>{{ nom }} </b>
+														</p>
+
+															<p style="MARGIN: 0pt 0pt 10px"><p>{{ adresse }} </p>
+																<span>{{ codePostal }} </span>
+																<span>{{ ville }} </span>
+																<p>{{ pays }} </p> </p>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td style="PADDING-RIGHT: 40px; PADDING-LEFT: 15px; PADDING-BOTTOM: 20px; PADDING-TOP: 20px"
+
+													>
+												<table cellspacing="0"
+													   cellpadding="0"
+													   border="0">
+													<tr>
+														<td valign="top"
+															style="FONT-SIZE: 14px; COLOR: rgb(0,0,0); LINE-HEIGHT: 20px; FONT-FAMILY: Arial,Helvetica,sans-serif"
+
+																>
+
+															<p style="MARGIN: 0pt 0pt 15px">
+																<p>Bonjour Madame,
+																Monsieur {{ contact }},</p>
+
+																<p>Votre entreprise
+																n'a pas encore
+																payé la taxe
+																d'apprentissage.</p>
+																<p>Vous nous avez
+																contacté la
+																derrnière fois
+																par {{ modalite }} {{ dateContact }}.</p>
+																<p>Merci de vous
+																acquitter de
+																votre taxe
+																d'apprentissage
+																le plus
+																rapidement
+																possible.</p>
+
+																<p>Cordialement </p>
+
+																<p>Responsable
+																des impôts</p>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<table width="100%" cellspacing="0"
+										   cellpadding="0" border="0"
+										   style="BORDER-TOP: rgb(204,228,195) 1px solid; BACKGROUND-COLOR: rgb(246,250,244)"
+
+											>
+										<tr>
+											<td valign="center"
+												style="PADDING-RIGHT: 10px; PADDING-LEFT: 15px; FONT-SIZE: 12px; PADDING-BOTTOM: 0pt; COLOR: rgb(72,72,72); LINE-HEIGHT: 17px; PADDING-TOP: 0pt; FONT-FAMILY: Arial,Helvetica,sans-serif"
+
+													><b>Centre des impôts</b><br
+
+													> 89 rue des Marroniers, 45160 Olivet<br> <A
+														style="COLOR: rgb(1,96,150)"
+														href="mailto:info@gestion.com"
+														target=_blank>info@gestion.com</A><br
+
+														> <a target="_blank"
+															 href="http://www.gestionimpots.com"
+															 style="COLOR: rgb(1,96,150)"
+
+														>www.gestionimpots.com</a>
+											</td>
+											<td width="100">{% load staticfiles %}<img height="86"
+																 width="100"
+																 src="{% static "stages/static/image/i-10.gif" %}"
+																 alt=" "
+
+													></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>{% load staticfiles %}<img height="25" width="550"
+										 src="{% static "stages/static/image/i-9.gif" %}"
+										 alt=" "
+
+										></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Django-Entreprise</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+	<style>
+		body {
+
+			padding-top: 50px;
+            TEXT-ALIGN: center;
+		}
+	</style>
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+		function initialize() {
+
+
+
+			var myOptions = {
+				zoom: 8,
+				center: {lat: 48.8534100, lng: 2.3488000},
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				mapTypeControl: true,
+				mapTypeControlOptions: {
+				style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+				position: google.maps.ControlPosition.TOP_RIGHT
+					},
+				zoomControl: true,
+				zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.SMALL,
+				position : google.maps.ControlPosition.LEFT_BOTTOM
+				},
+
+				overviewMapControl: true,
+				overviewMapControlOptions: {
+				opened: true
+				},
+
+				scaleControl : false,
+				scaleControlOptions :{
+				style : google.maps.ScaleControlStyle.DEFAULT
+				},
+			};
+				
+				
+			function addInfoWindow(marker, message) {
+
+				var infoWindow = new google.maps.InfoWindow({
+					content: message
+				});
+
+				google.maps.event.addListener(marker, 'click', function () {
+					infoWindow.open(map, marker);
+				});
+			} 
+
+
+			var map = new google.maps.Map(document.getElementById("mymap"),myOptions);
+			{% for e in entreprises %}
+				var point = new google.maps.LatLng({{e.latitude}},{{e.longitude}});
+				var marker = new google.maps.Marker({
+					position: point,
+					map: map,
+					title: 'Cliquez sur ce marker'
+				});
+				
+				addInfoWindow(marker, "Les coordonnées de l'entreprise : {{ e|escapejs }}");
+				
+			{% endfor %}
+		   
+		 
+				
+			
+			
+
+
+			}
+    </script>
+</head>
+
+
+<body onload="initialize();">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://localhost:8000/admin/">Project admin</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://localhost:8000/entreprises/">Liste d'entreprises</a></li>
+                <li class="active"><a href="http://localhost:8000/entreprises/localisation/">Location d'entreprise</a></li>
+                <li ><a href="http://localhost:8000/entreprises/getlocation/">Buffer d'entreprise</a></li>
+                <li><a href="http://localhost:8000/entreprises/publipostage/">Publipostage </a></li>
+
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<p > <h1 style="text-align: center"> Géolocalisation des entreprises</h1></p>
+
+		<div id="mymap" style="MARGIN-RIGHT: auto;MARGIN-LEFT: auto;height:600px;width:1000px;vertical-align:middle;"></div>
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</body>
+</html>
