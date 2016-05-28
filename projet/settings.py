@@ -45,7 +45,7 @@ INSTALLED_APPS = (
 EMAIL_USE_TLS = True
 EMAIL_HOST= 'smtp.gmail.com'
 EMAIL_HOST_USER='naijing.wang88@gmail.com'
-EMAIL_HOST_PASSWORD= 'wangnaijing3339'
+EMAIL_HOST_PASSWORD= '****'
 EMAIL_PORT= 587
 
 
